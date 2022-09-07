@@ -2,7 +2,6 @@
 Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#858796';
 
-
 // NPI-stackbar1
 var ctx = document.getElementById("NPI-stackbar1");
 var myBar = new Chart(ctx, {
@@ -112,33 +111,7 @@ var myBar = new Chart(ctx, {
 
 
 
-// NPI-bar2 目前沒用保留
-var ctx = document.getElementById("NPI-bar2");
-var myBarChart = new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: ["X360 G9", "Powderkeg", "Maldives","Rota"],
-    datasets: [{
-      label: "Issue qty",
-      backgroundColor: "#4e73df",
-      hoverBackgroundColor: "#2e59d9",
-      borderColor: "#4e73df",
-      data: [15, 12, 25,9],
-    }],
-  },
-  options: {
-    maintainAspectRatio: false,
-    responsive: true,
-
-    legend: {
-      display: false
-    },
-
-  }
-});
-
-
-//NPI-barline1
+    //NPI-barline1
 var ctx = document.getElementById("NPI-barline1");
 var myPieChart = new Chart(ctx, {
     type: 'bar',
@@ -150,13 +123,6 @@ var myPieChart = new Chart(ctx, {
         label: 'Issue Qty',
         yAxisID: "y-axis-2",
         data: [14,15,16],
-        type: 'line',
-        fill: false
-      },
-            {
-        label: 'REIssue Qty',
-        yAxisID: "y-axis-2",
-        data: [1,5,6],
         type: 'line',
         fill: false
       },
@@ -204,6 +170,7 @@ var myPieChart = new Chart(ctx, {
         }
     }
 });
+
 
 //NPI-barline2
 var ctx = document.getElementById("NPI-barline2");
@@ -271,3 +238,39 @@ var myPieChart = new Chart(ctx, {
         }
     }
 });
+
+
+
+// NPI-bar2 目前沒用保留
+var ctx = document.getElementById("NPI-bar2");
+var myBarChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ["X360 G9", "Powderkeg", "Maldives","Rota"],
+    datasets: [{
+      label: "Issue qty",
+      backgroundColor: "#4e73df",
+      hoverBackgroundColor: "#2e59d9",
+      borderColor: "#4e73df",
+      data: [15, 12, 25,9],
+    }],
+  },
+  options: {
+    maintainAspectRatio: false,
+    responsive: true,
+
+    legend: {
+      display: false
+    },
+
+  }
+});
+
+
+
+
+
+
+
+
+
