@@ -2,27 +2,6 @@
 Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#858796';
 
-//product-pie1
-var ctx = document.getElementById( "product-pie1" );
-var myPieChart = new Chart( ctx, {
-    type: 'pie',
-	    data: {
-			datasets: [ {
-				data: [ 45, 25, 20, 10,19 ],
-
-                            } ],
-			labels: ["MP","MV","PV","SI","TBD"]
-		},
-  options: {
-		    maintainAspectRatio: false,
-			responsive: true,
-        plugins: {
-      labels: {
-         fontColor: '#fff'
-      }
-    }
-  }
-})
 
 
 //NPI-pie2

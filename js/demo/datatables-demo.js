@@ -6,6 +6,8 @@ $(document).ready(function () {
             [5, 10, 20, 'All'],
         ],
     });
+    p1();
+
 
 var NPItable1 =  $('#NPI-table1').DataTable({
         searchPanes: {
@@ -127,6 +129,7 @@ var NPItable4 =  $('#NPI-table4').DataTable({
     new $.fn.dataTable.SearchPanes(NPItable4, {});
     NPItable4.searchPanes.container().prependTo("#NPI-filter-panel4");
     NPItable4.searchPanes.resizePanes();
+    NBl1();
 
 
 var NPItable5 =  $('#NPI-table5').DataTable({
@@ -158,17 +161,34 @@ var NPItable5 =  $('#NPI-table5').DataTable({
     new $.fn.dataTable.SearchPanes(NPItable5, {});
     NPItable5.searchPanes.container().prependTo("#NPI-filter-panel5");
     NPItable5.searchPanes.resizePanes();
+    NBl2();
 
 });
 
-/////////////////////////////////////////////////////////
+
+
+//////////////////////redraw///////////////////////////////////
 
   $('#NPI-redraw1').on('click', function(){
-
    b();
+} );
 
+  $('#NPI-redraw2').on('click', function(){
 
 } );
+
+  $('#NPI-redraw3').on('click', function(){
+   b2();
+} );
+
+  $('#NPI-redraw4').on('click', function(){
+   NBl12();
+} );
+
+  $('#NPI-redraw5').on('click', function(){
+   NBl22();
+} );
+
 
 
 function a(){
@@ -281,14 +301,6 @@ var ctxP = canvasP.getContext('2d')
 
 
 ////////////////////////////////////////////////////
-
-  $('#NPI-redraw3').on('click', function(){
-
-   b2();
-
-
-} );
-
 
 function a2(){
 
@@ -446,3 +458,473 @@ var ctxP = canvasP.getContext('2d')
     x.style.display = "none";
   }
 } );
+
+//////////
+function p1(){
+
+
+    var table2 = $('#product-table1').DataTable();
+     table2.page.len(-1).draw();
+
+    var table = document.getElementById("product-table1");
+    var tableLen = table.rows.length;
+    var data = {labels: [], population: [], area: [] };
+
+for (var i = 1; i < tableLen; i++) {
+
+  var l = table.rows[i].cells[1].innerText;
+  var a = table.rows[i].cells[7].innerText;
+
+
+  if (data.labels.indexOf(l) === -1) {
+  data.labels.push(table.rows[i].cells[1].innerText);
+  data.area.push(table.rows[i].cells[7].innerText);
+}
+else{
+
+var new_a = Number(data.area[data.labels.indexOf(l)])
+data.area[data.labels.indexOf(l)] = new_a+ Number(a)
+
+}
+
+}
+
+    table2.page.len(5).draw();
+
+
+
+//product-pie1
+var ctx = document.getElementById( "product-pie1" );
+ myPieChart = new Chart( ctx, {
+    type: 'pie',
+	    data: {
+	    labels: data.labels,
+			datasets: [ {
+				data: data.area,
+                            } ],
+
+		},
+  options: {
+		    maintainAspectRatio: false,
+			responsive: true,
+        plugins: {
+      labels: {
+         fontColor: '#fff'
+      }
+    }
+  }
+});
+}
+
+
+///////
+function NBl1(){
+
+    var table2 = $('#NPI-table4').DataTable();
+     table2.page.len(-1).draw();
+
+    var table = document.getElementById("NPI-table4");
+    var tableLen = table.rows.length;
+    var data = {labels: [], population: [], area: [] };
+
+for (var i = 1; i < tableLen; i++) {
+
+    var l = table.rows[i].cells[0].innerText;
+  var p = table.rows[i].cells[1].innerText;
+  var a = table.rows[i].cells[3].innerText;
+
+
+  if (data.labels.indexOf(l) === -1) {
+  data.labels.push(table.rows[i].cells[0].innerText);
+  data.population.push(1);
+  data.area.push(table.rows[i].cells[3].innerText);
+}
+else{
+
+var new_p = Number(data.population[data.labels.indexOf(l)])
+data.population[data.labels.indexOf(l)] = new_p+ 1
+
+var new_a = Number(data.area[data.labels.indexOf(l)])
+data.area[data.labels.indexOf(l)] = new_a+ Number(a)
+
+}
+
+}
+
+    table2.page.len(5).draw();
+
+    //NPI-barline1
+var ctx = document.getElementById("NPI-barline1");
+ myPieChart4 = new Chart(ctx, {
+    type: 'bar',
+   data: {
+      labels: data.labels,
+    datasets: [
+          {
+        label: 'Issue Qty',
+        yAxisID: "y-axis-2",
+        data: data.area,
+        type: 'line',
+        fill: false
+      },
+      {
+        label: 'Product name',
+        yAxisID: "y-axis-1",
+        data: data.population
+      },
+
+    ]},
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        tooltips: {
+            mode: 'index',
+            intersect: true
+        },
+        scales: {
+            xAxes: [{
+                stacked: true
+            }],
+            yAxes: [{
+                type: "linear",
+                stacked: true,
+                display: true,
+                position: "left",
+                id: "y-axis-1",
+                ticks: {
+                    beginAtZero: true,
+                    suggestedMin: 0,
+                    suggestedMax: 10,
+                    min: 0
+                }
+            }, {
+                type: "linear",
+                display: false,
+                id: "y-axis-2",
+                ticks: {
+                    beginAtZero: true,
+                    suggestedMin: 0,
+                    suggestedMax: 10,
+                    min: 0
+                }
+            }],
+        }
+    }
+});
+
+}
+
+function NBl12(){
+
+    var table2 = $('#NPI-table4').DataTable();
+     table2.page.len(-1).draw();
+
+    var table = document.getElementById("NPI-table4");
+    var tableLen = table.rows.length;
+    var data = {labels: [], population: [], area: [] };
+
+for (var i = 1; i < tableLen; i++) {
+
+    var l = table.rows[i].cells[0].innerText;
+  var p = table.rows[i].cells[1].innerText;
+  var a = table.rows[i].cells[3].innerText;
+
+
+  if (data.labels.indexOf(l) === -1) {
+  data.labels.push(table.rows[i].cells[0].innerText);
+  data.population.push(1);
+  data.area.push(table.rows[i].cells[3].innerText);
+}
+else{
+
+var new_p = Number(data.population[data.labels.indexOf(l)])
+data.population[data.labels.indexOf(l)] = new_p+ 1
+
+var new_a = Number(data.area[data.labels.indexOf(l)])
+data.area[data.labels.indexOf(l)] = new_a+ Number(a)
+
+}
+
+}
+
+    table2.page.len(5).draw();
+    myPieChart4.destroy();
+
+    //NPI-barline1
+var ctx = document.getElementById("NPI-barline1");
+ myPieChart4 = new Chart(ctx, {
+    type: 'bar',
+   data: {
+      labels: data.labels,
+    datasets: [
+          {
+        label: 'Issue Qty',
+        yAxisID: "y-axis-2",
+        data: data.area,
+        type: 'line',
+        fill: false
+      },
+      {
+        label: 'Product name',
+        yAxisID: "y-axis-1",
+        data: data.population
+      },
+
+    ]},
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        tooltips: {
+            mode: 'index',
+            intersect: true
+        },
+        scales: {
+            xAxes: [{
+                stacked: true
+            }],
+            yAxes: [{
+                type: "linear",
+                stacked: true,
+                display: true,
+                position: "left",
+                id: "y-axis-1",
+                ticks: {
+                    beginAtZero: true,
+                    suggestedMin: 0,
+                    suggestedMax: 10,
+                    min: 0
+                }
+            }, {
+                type: "linear",
+                display: false,
+                id: "y-axis-2",
+                ticks: {
+                    beginAtZero: true,
+                    suggestedMin: 0,
+                    suggestedMax: 10,
+                    min: 0
+                }
+            }],
+        }
+    }
+});
+
+}
+
+
+///////
+function NBl2(){
+
+    var table2 = $('#NPI-table5').DataTable();
+     table2.page.len(-1).draw();
+
+    var table = document.getElementById("NPI-table5");
+    var tableLen = table.rows.length;
+    var data = {labels: [], population: [], area: [], rei: [] };
+
+for (var i = 1; i < tableLen; i++) {
+
+    var l = table.rows[i].cells[0].innerText;
+  var a = table.rows[i].cells[3].innerText;
+  var r = table.rows[i].cells[4].innerText;
+
+
+  if (data.labels.indexOf(l) === -1) {
+  data.labels.push(table.rows[i].cells[0].innerText);
+  data.population.push(1);
+  data.area.push(table.rows[i].cells[3].innerText);
+  data.rei.push(table.rows[i].cells[4].innerText);
+}
+else{
+
+var new_p = Number(data.population[data.labels.indexOf(l)])
+data.population[data.labels.indexOf(l)] = new_p+ 1
+
+var new_a = Number(data.area[data.labels.indexOf(l)])
+data.area[data.labels.indexOf(l)] = new_a+ Number(a)
+
+var new_r = Number(data.rei[data.labels.indexOf(l)])
+data.rei[data.labels.indexOf(l)] = new_r+ Number(r)
+
+}
+
+}
+
+    table2.page.len(5).draw();
+
+//NPI-barline2
+var ctx = document.getElementById("NPI-barline2");
+ myPieChart5 = new Chart(ctx, {
+    type: 'bar',
+   data: {
+      labels: data.labels,
+    datasets: [
+
+          {
+        label: 'Issue Qty',
+        yAxisID: "y-axis-2",
+        data: data.area,
+        type: 'line',
+        fill: false
+      },
+            {
+        label: 'REIssue Qty',
+        yAxisID: "y-axis-2",
+        data: data.rei,
+        type: 'line',
+        fill: false
+      },
+      {
+        label: 'Product name',
+        yAxisID: "y-axis-1",
+        data: data.population
+      },
+
+    ]},
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        tooltips: {
+            mode: 'index',
+            intersect: true
+        },
+        scales: {
+            xAxes: [{
+                stacked: true
+            }],
+            yAxes: [{
+                type: "linear",
+                stacked: true,
+                display: true,
+                position: "left",
+                id: "y-axis-1",
+                ticks: {
+                    beginAtZero: true,
+                    suggestedMin: 0,
+                    suggestedMax: 10,
+                    min: 0
+                }
+            }, {
+                type: "linear",
+                display: false,
+                id: "y-axis-2",
+                ticks: {
+                    beginAtZero: true,
+                    suggestedMin: 0,
+                    suggestedMax: 10,
+                    min: 0
+                }
+            }],
+        }
+    }
+});
+
+}
+function NBl22(){
+
+    var table2 = $('#NPI-table5').DataTable();
+     table2.page.len(-1).draw();
+
+    var table = document.getElementById("NPI-table5");
+    var tableLen = table.rows.length;
+    var data = {labels: [], population: [], area: [], rei: [] };
+
+for (var i = 1; i < tableLen; i++) {
+
+    var l = table.rows[i].cells[0].innerText;
+  var a = table.rows[i].cells[3].innerText;
+  var r = table.rows[i].cells[4].innerText;
+
+
+  if (data.labels.indexOf(l) === -1) {
+  data.labels.push(table.rows[i].cells[0].innerText);
+  data.population.push(1);
+  data.area.push(table.rows[i].cells[3].innerText);
+  data.rei.push(table.rows[i].cells[4].innerText);
+}
+else{
+
+var new_p = Number(data.population[data.labels.indexOf(l)])
+data.population[data.labels.indexOf(l)] = new_p+ 1
+
+var new_a = Number(data.area[data.labels.indexOf(l)])
+data.area[data.labels.indexOf(l)] = new_a+ Number(a)
+
+var new_r = Number(data.rei[data.labels.indexOf(l)])
+data.rei[data.labels.indexOf(l)] = new_r+ Number(r)
+
+}
+
+}
+
+    table2.page.len(5).draw();
+    myPieChart5.destroy();
+
+//NPI-barline2
+var ctx = document.getElementById("NPI-barline2");
+ myPieChart5 = new Chart(ctx, { //不能加入VAR myPieChart5，好像刪除步調
+    type: 'bar',
+   data: {
+      labels: data.labels,
+    datasets: [
+
+          {
+        label: 'Issue Qty',
+        yAxisID: "y-axis-2",
+        data: data.area,
+        type: 'line',
+        fill: false
+      },
+            {
+        label: 'REIssue Qty',
+        yAxisID: "y-axis-2",
+        data: data.rei,
+        type: 'line',
+        fill: false
+      },
+      {
+        label: 'Product name',
+        yAxisID: "y-axis-1",
+        data: data.population
+      },
+
+    ]},
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        tooltips: {
+            mode: 'index',
+            intersect: true
+        },
+        scales: {
+            xAxes: [{
+                stacked: true
+            }],
+            yAxes: [{
+                type: "linear",
+                stacked: true,
+                display: true,
+                position: "left",
+                id: "y-axis-1",
+                ticks: {
+                    beginAtZero: true,
+                    suggestedMin: 0,
+                    suggestedMax: 10,
+                    min: 0
+                }
+            }, {
+                type: "linear",
+                display: false,
+                id: "y-axis-2",
+                ticks: {
+                    beginAtZero: true,
+                    suggestedMin: 0,
+                    suggestedMax: 10,
+                    min: 0
+                }
+            }],
+        }
+    }
+});
+
+}
