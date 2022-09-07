@@ -8,14 +8,18 @@ var ctx = document.getElementById("NPI-stackbar1");
 var myBar = new Chart(ctx, {
     type: 'bar',
         data: {
-        labels: ['Org1','Org2','Org3','Org4','Org5'],
+        labels: ['Design-BIOS','Design-EE','Design-ME'],
         datasets: [
         {
-            label: 'Packed',
+            label: 'Design',
             data: [12,55,77,32,45],
         },
         {
-            label: 'Unpacked',
+            label: 'Supplier',
+            data: [56,88,22,88,40],
+          },
+             {
+            label: 'Factory-Process',
             data: [56,88,22,88,40],
           }
     ],
@@ -108,7 +112,7 @@ var myBar = new Chart(ctx, {
 
 
 
-// NPI-bar2
+// NPI-bar2 目前沒用保留
 var ctx = document.getElementById("NPI-bar2");
 var myBarChart = new Chart(ctx, {
   type: 'bar',
@@ -133,76 +137,137 @@ var myBarChart = new Chart(ctx, {
   }
 });
 
-// NPI-bar3
-var ctx = document.getElementById("NPI-bar3");
-var myBarChart = new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: ["X360 G9", "Powderkeg", "Maldives","Rota"],
-    datasets: [{
-      label: "Revenue",
-      backgroundColor: "#4e73df",
-      hoverBackgroundColor: "#2e59d9",
-      borderColor: "#4e73df",
-      data: [15, 12, 25,12],
-    }],
-  },
-  options: {
-    maintainAspectRatio: false,
-    layout: {
-      padding: {
-        left: 10,
-        right: 25,
-        top: 25,
-        bottom: 0
-      }
-    },
-    scales: {
-      xAxes: [{
-        time: {
-          unit: 'month'
-        },
-        gridLines: {
-          display: false,
-          drawBorder: false
-        },
-        ticks: {
-          maxTicksLimit: 6
-        },
-        maxBarThickness: 25,
-      }],
-      yAxes: [{
-        ticks: {
-          min: 0,
-          maxTicksLimit: 5,
-          padding: 10,
 
+//NPI-barline1
+var ctx = document.getElementById("NPI-barline1");
+var myPieChart = new Chart(ctx, {
+    type: 'bar',
+   data: {
+      labels: ["Inventec", "Compal", "Quanta"],
+    datasets: [
+
+          {
+        label: 'Issue Qty',
+        yAxisID: "y-axis-2",
+        data: [14,15,16],
+        type: 'line',
+        fill: false
+      },
+            {
+        label: 'REIssue Qty',
+        yAxisID: "y-axis-2",
+        data: [1,5,6],
+        type: 'line',
+        fill: false
+      },
+      {
+        label: 'Product name',
+        yAxisID: "y-axis-1",
+        data: [13,21,13]
+      },
+
+    ]},
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        tooltips: {
+            mode: 'index',
+            intersect: true
         },
-        gridLines: {
-          color: "rgb(234, 236, 244)",
-          zeroLineColor: "rgb(234, 236, 244)",
-          drawBorder: false,
-          borderDash: [2],
-          zeroLineBorderDash: [2]
+        scales: {
+            xAxes: [{
+                stacked: true
+            }],
+            yAxes: [{
+                type: "linear",
+                stacked: true,
+                display: true,
+                position: "left",
+                id: "y-axis-1",
+                ticks: {
+                    beginAtZero: true,
+                    suggestedMin: 0,
+                    suggestedMax: 10,
+                    min: 0
+                }
+            }, {
+                type: "linear",
+                display: false,
+                id: "y-axis-2",
+                ticks: {
+                    beginAtZero: true,
+                    suggestedMin: 0,
+                    suggestedMax: 10,
+                    min: 0
+                }
+            }],
         }
-      }],
-    },
-    legend: {
-      display: false
-    },
-    tooltips: {
-      titleMarginBottom: 10,
-      titleFontColor: '#6e707e',
-      titleFontSize: 14,
-      backgroundColor: "rgb(255,255,255)",
-      bodyFontColor: "#858796",
-      borderColor: '#dddfeb',
-      borderWidth: 1,
-      xPadding: 15,
-      yPadding: 15,
-      displayColors: false,
-      caretPadding: 10
-    },
-  }
+    }
 });
 
+//NPI-barline2
+var ctx = document.getElementById("NPI-barline2");
+var myPieChart = new Chart(ctx, {
+    type: 'bar',
+   data: {
+      labels: ["Inventec", "Compal", "Quanta"],
+    datasets: [
+
+          {
+        label: 'Issue Qty',
+        yAxisID: "y-axis-2",
+        data: [14,15,16],
+        type: 'line',
+        fill: false
+      },
+            {
+        label: 'REIssue Qty',
+        yAxisID: "y-axis-2",
+        data: [1,5,6],
+        type: 'line',
+        fill: false
+      },
+      {
+        label: 'Product name',
+        yAxisID: "y-axis-1",
+        data: [13,21,13]
+      },
+
+    ]},
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        tooltips: {
+            mode: 'index',
+            intersect: true
+        },
+        scales: {
+            xAxes: [{
+                stacked: true
+            }],
+            yAxes: [{
+                type: "linear",
+                stacked: true,
+                display: true,
+                position: "left",
+                id: "y-axis-1",
+                ticks: {
+                    beginAtZero: true,
+                    suggestedMin: 0,
+                    suggestedMax: 10,
+                    min: 0
+                }
+            }, {
+                type: "linear",
+                display: false,
+                id: "y-axis-2",
+                ticks: {
+                    beginAtZero: true,
+                    suggestedMin: 0,
+                    suggestedMax: 10,
+                    min: 0
+                }
+            }],
+        }
+    }
+});

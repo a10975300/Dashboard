@@ -87,21 +87,7 @@ var table =  $('#NPI-table1').DataTable({
         ],
     });
 
-
-     $('#no2').DataTable({
-        lengthMenu: [
-            [5, 10, 20, -1],
-            [5, 10, 20, 'All'],
-        ],
-    });
     $('#NPI-table5').DataTable({
-        lengthMenu: [
-            [5, 10, 20, -1],
-            [5, 10, 20, 'All'],
-        ],
-    });
-
-     $('#no3').DataTable({
         lengthMenu: [
             [5, 10, 20, -1],
             [5, 10, 20, 'All'],
