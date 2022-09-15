@@ -2,61 +2,7 @@
 Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#858796';
 
-// NPI-stackbar1
-var ctx = document.getElementById("NPI-stackbar1");
-var myBar = new Chart(ctx, {
-    type: 'bar',
-        data: {
-        labels: ['Design-BIOS','Design-EE','Design-ME'],
-        datasets: [
-        {
-            label: 'Design',
-            data: [12,55,77,32,45],
-        },
-        {
-            label: 'Supplier',
-            data: [56,88,22,88,40],
-          },
-             {
-            label: 'Factory-Process',
-            data: [56,88,22,88,40],
-          }
-    ],
 
-    },
-    options: {
-       maintainAspectRatio: false,
-        title: {
-            display: true,
-        },
-        tooltips: {
-            mode: 'label',
-            callbacks: {
-                label: function(tooltipItem, data) {
-                    var corporation = data.datasets[tooltipItem.datasetIndex].label;
-                    var valor = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
-                    var total = 0;
-                    for (var i = 0; i < data.datasets.length; i++)
-                        total += data.datasets[i].data[tooltipItem.index];
-                    if (tooltipItem.datasetIndex != data.datasets.length - 1) {
-                        return corporation + " : " + valor.toFixed(0).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
-                    } else {
-                        return [corporation + " : " + valor.toFixed(0).replace(/(\d)(?=(\d{3})+\.)/g, '$1,'), "Total : " + total];
-                    }
-                }
-            }
-        },
-        responsive: true,
-        scales: {
-            xAxes: [{
-                stacked: true,
-            }],
-            yAxes: [{
-                stacked: true
-            }]
-        }
-    }
-});
 
 
 	//NPI-Bar1
