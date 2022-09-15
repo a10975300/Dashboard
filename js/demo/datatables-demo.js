@@ -271,7 +271,7 @@ function producttable1_init(){
   for (var i = 1; i < tableLen; i++) {
 
     var coltext1 = table.rows[i].cells[1].innerText;
-    var coltext7 = table.rows[i].cells[7].innerText;
+    var coltext7 = Number(table.rows[i].cells[7].innerText);
 
     if (data.col1.indexOf(coltext1) === -1) {
     data.col1.push(coltext1);
@@ -324,7 +324,7 @@ for (var i = 1; i < tableLen; i++) {
 
     var coltext0 = table.rows[i].cells[0].innerText;
     var coltext1 = table.rows[i].cells[1].innerText;
-    var coltext2 = table.rows[i].cells[2].innerText;
+    var coltext2 = Number(table.rows[i].cells[2].innerText);
 
 
   if (data.col1.indexOf(coltext1) === -1) {
@@ -514,8 +514,7 @@ function NPItable3_init(){
   for (var i = 1; i < tableLen; i++) {
 
     var coltext4 = table.rows[i].cells[4].innerText;
-    var coltext5 = table.rows[i].cells[5].innerText;
-
+    var coltext5 = Number(table.rows[i].cells[5].innerText);
 
   if (data.col4.indexOf(coltext4) === -1) {
   data.col4.push(coltext4);
@@ -577,7 +576,7 @@ for (var i = 1; i < tableLen; i++) {
 
     var coltext0 = table.rows[i].cells[0].innerText;
     var coltext1 = table.rows[i].cells[1].innerText;
-    var coltext3 = table.rows[i].cells[3].innerText;
+    var coltext3 = Number(table.rows[i].cells[3].innerText);
 
 
 //pie
@@ -726,9 +725,8 @@ for (var i = 1; i < tableLen; i++) {
 
     var coltext0 = table.rows[i].cells[0].innerText;
     var coltext1 = table.rows[i].cells[1].innerText;
-    var coltext3 = table.rows[i].cells[3].innerText;
-    var coltext4 = table.rows[i].cells[4].innerText;
-
+    var coltext3 = Number(table.rows[i].cells[3].innerText);
+    var coltext4 = Number(table.rows[i].cells[4].innerText);
 
 //pie
   if (data.col11.indexOf(coltext1) === -1) {
