@@ -252,7 +252,9 @@ var product_pie1_build = 0
 var NPI_pie1_build = 0
 var NPI_stackbar1_build = 0
 var NPI_pie3_build = 0
+var NPI_pie4_build = 0
 var NPI_stacklinebar1_build = 0
+var NPI_pie5_build = 0
 var NPI_stacklinebar2_build = 0
 
 
@@ -403,7 +405,7 @@ data.S[data.col0.indexOf(coltext0)] = coltext2_S_old+ Number(coltext2)
 
     table_init.page.len(5).draw();
 
-        if(NPI_pie1_build===1){ //如果ctx1有宣告過了
+        if(NPI_pie1_build===1){ 
             NPI_pie1.destroy();
     }
 
@@ -430,7 +432,7 @@ var ctxP2 = canvasP.getContext('2d')
   }
 });
 
-        if(NPI_stackbar1_build===1){ //如果ctx1有宣告過了
+        if(NPI_stackbar1_build===1){ 
     NPI_stackbar1.destroy();
 
     }
@@ -530,7 +532,7 @@ data.col5[data.col4.indexOf(coltext4)] = coltext5_old+ Number(coltext5)
 
     table_init.page.len(5).draw();
 
-    if(NPI_pie3_build===1){ //如果ctx1有宣告過了
+    if(NPI_pie3_build===1){ 
     NPI_pie3.destroy();
     }
 
@@ -569,7 +571,7 @@ function NPItable4_init(){
 
     var table = document.getElementById("NPI-table4");
     var tableLen = table.rows.length;
-    var data = {col0: [], col1: [], col3: [] };
+    var data = {col0: [], col1: [], col3: [],col11: [], col33: [] };
 
 for (var i = 1; i < tableLen; i++) {
 
@@ -578,6 +580,20 @@ for (var i = 1; i < tableLen; i++) {
     var coltext3 = table.rows[i].cells[3].innerText;
 
 
+//pie
+  if (data.col11.indexOf(coltext1) === -1) {
+  data.col11.push(coltext1);
+  data.col33.push(coltext3);
+}
+else{
+
+
+var coltext3_old = Number(data.col33[data.col11.indexOf(coltext1)])
+data.col3[data.col11.indexOf(coltext0)] = coltext3_old+ Number(coltext3)
+
+}
+
+//bar
   if (data.col0.indexOf(coltext0) === -1) {
   data.col0.push(coltext0);
   data.col1.push(1);
@@ -593,9 +609,40 @@ data.col3[data.col0.indexOf(coltext0)] = coltext3_old+ Number(coltext3)
 
 }
 
+
+
 }
 
     table_init.page.len(5).draw();
+
+
+        if(NPI_pie4_build===1){ 
+          NPI_pie4.destroy();
+    }
+
+
+NPI_pie4_build=1
+var canvasP = document.getElementById("NPI-pie4")
+var ctxP = canvasP.getContext('2d')
+ NPI_pie4 = new Chart(ctxP, {
+  type: 'pie',
+  data: {
+    labels: data.col11,
+    datasets: [{
+      data: data.col33
+    }]
+  },
+  options: {
+        maintainAspectRatio: false,
+      responsive: true,
+        plugins: {
+      labels: {
+         fontColor: '#fff'
+      }
+    }
+  }
+});
+
 
     if(NPI_stacklinebar1_build === 1){ //如果有建立過了
     NPI_stacklinebar1.destroy();
@@ -673,7 +720,7 @@ function NPItable5_init(){
 
     var table = document.getElementById("NPI-table5");
     var tableLen = table.rows.length;
-    var data = {col0: [], col1: [], col3: [], col4: [] };
+    var data = {col0: [], col1: [], col3: [], col4: [],col11: [], col44: [] };
 
 for (var i = 1; i < tableLen; i++) {
 
@@ -683,6 +730,21 @@ for (var i = 1; i < tableLen; i++) {
     var coltext4 = table.rows[i].cells[4].innerText;
 
 
+//pie
+  if (data.col11.indexOf(coltext1) === -1) {
+  data.col11.push(coltext1);
+  data.col44.push(coltext4);
+}
+else{
+
+
+var coltext4_old = Number(data.col4[data.col11.indexOf(coltext1)])
+data.col4[data.col11.indexOf(coltext0)] = coltext4_old+ Number(coltext4)
+
+}
+
+
+//bar
   if (data.col0.indexOf(coltext0) === -1) {
   data.col0.push(coltext0);
   data.col1.push(1);
@@ -705,6 +767,38 @@ data.col4[data.col0.indexOf(coltext0)] = coltext4_old+ Number(coltext4)
 }
 
     table_init.page.len(5).draw();
+
+
+        if(NPI_pie5_build===1){ 
+          NPI_pie5.destroy();
+    }
+
+
+NPI_pie5_build=1
+var canvasP = document.getElementById("NPI-pie5")
+var ctxP = canvasP.getContext('2d')
+ NPI_pie5 = new Chart(ctxP, {
+  type: 'pie',
+  data: {
+    labels: data.col11,
+    datasets: [{
+      data: data.col44
+    }]
+  },
+  options: {
+        maintainAspectRatio: false,
+      responsive: true,
+        plugins: {
+      labels: {
+         fontColor: '#fff'
+      }
+    }
+  }
+});
+
+
+
+
 
     if(NPI_stacklinebar2_build === 1){ //如果有建立過了
     NPI_stacklinebar2.destroy();
