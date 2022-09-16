@@ -30,7 +30,7 @@
     <!-- Page Wrapper -->
     <div id="wrapper" >
 
-        <!-- Sidebar左側留白 -->
+        <!-- Sidebar左側留白 刪掉就沒有左側 -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar"></ul>
         <!-- Sidebar左側留白-->
 
@@ -188,8 +188,8 @@
                                                     <div class="card shadow mb-4 h-100">
                                                         <div class="card-body">
                                                             <div class="table-responsive">
-                                                                <table id="product-table1" class="display" style="width:100%">
-                                                                    <thead>
+                                                                <table id="product-table1" class="display" style="width:100%; white-space:nowrap;">
+                                                                    <thead >
                                                                         <tr>
                                                                             <th>Risk Ass.</th>
                                                                             <th>Stage</th>
@@ -200,7 +200,7 @@
                                                                             <th>DFM</th>
                                                                             <th>NPI Issues</th>
                                                                             <th>Sustaining</th>
-                                                                            <th style="display:none;">Create Day</th>
+                                                                            <th>Create Day</th>
                                                                         </tr>
                                                                     </thead>
                                                                     <tbody>
@@ -214,7 +214,7 @@
                                                                             <td>test</td>
                                                                             <td>4</td>
                                                                             <td>test</td>
-                                                                            <td style="display:none;">2022-01-01</td>
+                                                                            <td>2022-01-01</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>test</td>
@@ -226,7 +226,7 @@
                                                                             <td>test</td>
                                                                             <td>5</td>
                                                                             <td>test</td>
-                                                                            <td style="display:none;">2022-01-01</td>
+                                                                            <td>2022-01-01</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>test</td>
@@ -238,7 +238,7 @@
                                                                             <td>test</td>
                                                                             <td>6</td>
                                                                             <td>test</td>
-                                                                            <td style="display:none;">2022-01-01</td>
+                                                                            <td>2022-01-01</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>test</td>
@@ -250,7 +250,7 @@
                                                                             <td>test</td>
                                                                             <td>7</td>
                                                                             <td>test</td>
-                                                                            <td style="display:none;">2021-01-01</td>
+                                                                            <td>2021-01-01</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>test</td>
@@ -262,7 +262,7 @@
                                                                             <td>test</td>
                                                                             <td>8</td>
                                                                             <td>test</td>
-                                                                            <td style="display:none;">2022-02-01</td>
+                                                                            <td>2022-02-01</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>test</td>
@@ -274,7 +274,7 @@
                                                                             <td>test</td>
                                                                             <td>9</td>
                                                                             <td>test</td>
-                                                                            <td style="display:none;">2022-01-01</td>
+                                                                            <td>2022-01-01</td>
                                                                         </tr>
 
 
@@ -342,7 +342,7 @@
                                                                         <div class="card shadow mb-4 h-100">
                                                                             <div class="card-body">
                                                                                 <div class="table-responsive">
-                                                                                    <table id="NPI-table1" class="display" style="width:100%">
+                                                                                    <table id="NPI-table1" class="display" style="width:100%; white-space:nowrap;">
                                                                                         <thead>
                                                                                             <tr>
                                                                                                 <th>Root cause</th>
@@ -442,7 +442,7 @@
                                                                 <!-- row2 -->
 
                                                                  <!-- filter_button -->
-                                                                <div class="row mb-3 ml-2">
+                                                                <div class="row ml-1">
                                                                     <button id="NPI-filter-button1" class="btn btn-secondary btn-icon-split btn-sm">
                                                                         <span class="icon text-white-50">
                                                                             <i class="fas fa-arrow-right"></i>
@@ -453,9 +453,9 @@
                                                                  <!-- filter button -->
 
                                                                 <!-- filter -->
-                                                                <div class="row" style="display:none" id="NPI-filter1">
-                                                                    <div class="col-xl-12 col-lg-12 mb-4">
-                                                                        <div class="card shadow mb-3">
+                                                                <div class="row mt-2" style="display:none" id="NPI-filter1">
+                                                                    <div class="col-xl-12 col-lg-12">
+                                                                        <div class="card shadow">
                                                                             <div class="card-body">
 
                                                                                 <form action="" method="post">
@@ -519,7 +519,7 @@
                                                                         <div class="card shadow mb-4 h-100">
                                                                             <div class="card-body">
                                                                                 <div class="table-responsive">
-                                                                                    <table id="NPI-table2" class="display" style="width:100%">
+                                                                                    <table id="NPI-table2" class="display" style="width:100%; white-space:nowrap;">
                                                                                         <thead>
                                                                                             <tr>
                                                                                                 <th>Stage</th>
@@ -604,7 +604,7 @@
                                                                        <div class="card shadow mb-4 h-100">
                                                                            <div class="card-body">
                                                                                 <div class="table-responsive">
-                                                                                    <table id="no" class="display" style="width:100%">
+                                                                                    <table id="no" class="display" style="width:100%; white-space:nowrap;">
                                                                                         <thead>
                                                                                             <tr>
                                                                                                 <th>Stage</th>
@@ -637,7 +637,7 @@
                                                                  <!-- row2-->
 
                                                                <!-- filter_button -->
-                                                                <div class="row mb-3 ml-2">
+                                                                <div class="row ml-1">
                                                                     <button id="NPI-filter-button2" class="btn btn-secondary btn-icon-split btn-sm">
                                                                         <span class="icon text-white-50">
                                                                             <i class="fas fa-arrow-right"></i>
@@ -648,9 +648,9 @@
                                                                  <!-- filter button -->
 
                                                                 <!-- filter -->
-                                                                <div class="row" style="display:none" id="NPI-filter2">
-                                                                    <div class="col-xl-12 col-lg-12 mb-4">
-                                                                        <div class="card shadow mb-3">
+                                                                <div class="row mt-2" style="display:none" id="NPI-filter2">
+                                                                    <div class="col-xl-12 col-lg-12">
+                                                                        <div class="card shadow">
                                                                             <div class="card-body">
 
                                                                                 <form action="" method="post">
@@ -717,7 +717,7 @@
                                                                         <div class="card shadow mb-4 h-100">
                                                                             <div class="card-body">
                                                                                 <div class="table-responsive">
-                                                                                    <table id="NPI-table3" class="display" style="width:100%">
+                                                                                    <table id="NPI-table3" class="display" style="width:100%; white-space:nowrap;">
                                                                                         <thead>
                                                                                             <tr>
                                                                                                 <th>ODM</th>
@@ -726,7 +726,7 @@
                                                                                                 <th>Series</th>
                                                                                                 <th>Failure Category</th>
                                                                                                 <th>issue QTY</th>
-                                                                                                <th style="display:none">Create day</th>
+                                                                                                <th>Create day</th>
                                                                                             </tr>
                                                                                         </thead>
                                                                                         <tbody>
@@ -737,7 +737,7 @@
                                                                                                 <td>8000</td>
                                                                                                 <td>single</td>
                                                                                                 <td>4</td>
-                                                                                                <td style="display:none">2020-08-16</td>
+                                                                                                <td>2020-08-16</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td>Inventec</td>
@@ -746,7 +746,7 @@
                                                                                                 <td>7000</td>
                                                                                                 <td>single</td>
                                                                                                 <td>10</td>
-                                                                                                <td style="display:none">2019-08-16</td>
+                                                                                                <td>2019-08-16</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td>Inventec</td>
@@ -755,7 +755,7 @@
                                                                                                 <td>7000</td>
                                                                                                 <td>Duplicate</td>
                                                                                                 <td>4</td>
-                                                                                                <td style="display:none">2020-08-16</td>
+                                                                                                <td>2020-08-16</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td>compal</td>
@@ -764,7 +764,7 @@
                                                                                                 <td>9000</td>
                                                                                                 <td>Duplicate</td>
                                                                                                 <td>4</td>
-                                                                                                <td style="display:none">2020-08-16</td>
+                                                                                                <td>2020-08-16</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td>compal</td>
@@ -773,7 +773,7 @@
                                                                                                 <td>9000</td>
                                                                                                 <td>single</td>
                                                                                                 <td>10</td>
-                                                                                                <td style="display:none">2013-09-16</td>
+                                                                                                <td>2013-09-16</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td>compal</td>
@@ -782,7 +782,7 @@
                                                                                                 <td>9000</td>
                                                                                                 <td>Duplicate</td>
                                                                                                 <td>4</td>
-                                                                                                <td style="display:none">2020-08-16</td>
+                                                                                                <td>2020-08-16</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td>Inventec</td>
@@ -791,7 +791,7 @@
                                                                                                 <td>8000</td>
                                                                                                 <td>single</td>
                                                                                                 <td>4</td>
-                                                                                                <td style="display:none">2020-08-16</td>
+                                                                                                <td>2020-08-16</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td>Inventec</td>
@@ -800,7 +800,7 @@
                                                                                                 <td>8000</td>
                                                                                                 <td>single</td>
                                                                                                 <td>4</td>
-                                                                                                <td style="display:none">2010-08-16</td>
+                                                                                                <td>2010-08-16</td>
                                                                                             </tr>
                                                                                         </tbody>
                                                                                     </table>
@@ -812,7 +812,7 @@
                                                                 <!-- row1 -->
 
                                                               <!-- filter_button -->
-                                                                <div class="row mb-3 ml-2">
+                                                                <div class="row ml-1">
                                                                     <button id="NPI-filter-button3" class="btn btn-secondary btn-icon-split btn-sm">
                                                                         <span class="icon text-white-50">
                                                                             <i class="fas fa-arrow-right"></i>
@@ -823,9 +823,9 @@
                                                                  <!-- filter button -->
 
                                                                 <!-- filter -->
-                                                                <div class="row" style="display:none" id="NPI-filter3">
-                                                                    <div class="col-xl-12 col-lg-12 mb-4">
-                                                                        <div class="card shadow mb-3">
+                                                                <div class="row mt-2" style="display:none" id="NPI-filter3">
+                                                                    <div class="col-xl-12 col-lg-12">
+                                                                        <div class="card shadow">
                                                                             <div class="card-body">
 
                                                                                 <form action="" method="post">
@@ -890,14 +890,14 @@
                                                                         <div class="card shadow mb-4 h-100">
                                                                             <div class="card-body">
                                                                                 <div class="table-responsive">
-                                                                                    <table id="NPI-table4" class="display" style="width:100%">
+                                                                                    <table id="NPI-table4" class="display" style="width:100%; white-space:nowrap;">
                                                                                         <thead>
                                                                                             <tr>
                                                                                                 <th>ODM</th>
                                                                                                 <th>Product name</th>
                                                                                                 <th>Series</th>
                                                                                                 <th>Issue QTY</th>
-                                                                                                <th style="display:none">Create Day</th>
+                                                                                                <th>Create Day</th>
                                                                                             </tr>
                                                                                         </thead>
                                                                                         <tbody>
@@ -906,63 +906,63 @@
                                                                                                 <td>X360 G9</td>
                                                                                                 <td>8000</td>
                                                                                                 <td>11</td>
-                                                                                                <td style="display:none">2022-07-11</td>
+                                                                                                <td>2022-07-11</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td>Inventec</td>
                                                                                                 <td>Powderkeg</td>
                                                                                                 <td>8000</td>
                                                                                                 <td>31</td>
-                                                                                                <td style="display:none">2021-08-11</td>
+                                                                                                <td>2021-08-11</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td>Compal</td>
                                                                                                 <td>Rota</td>
                                                                                                 <td>7000</td>
                                                                                                 <td>12</td>
-                                                                                                <td style="display:none">2022-07-11</td>
+                                                                                                <td>2022-07-11</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td>Inventec</td>
                                                                                                 <td>wddf</td>
                                                                                                 <td>9000</td>
                                                                                                 <td>32</td>
-                                                                                                <td style="display:none">2019-07-11</td>
+                                                                                                <td>2019-07-11</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td>Inventec</td>
                                                                                                 <td>wsff</td>
                                                                                                 <td>8000</td>
                                                                                                 <td>22</td>
-                                                                                                <td style="display:none">2022-07-11</td>
+                                                                                                <td>2022-07-11</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td>Compal</td>
                                                                                                 <td>Maldives</td>
                                                                                                 <td>7000</td>
                                                                                                 <td>53</td>
-                                                                                                <td style="display:none">2022-06-11</td>
+                                                                                                <td>2022-06-11</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td>Quanta</td>
                                                                                                 <td>eddd</td>
                                                                                                 <td>9000</td>
                                                                                                 <td>5</td>
-                                                                                                <td style="display:none">2020-07-11</td>
+                                                                                                <td>2020-07-11</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td>Quanta</td>
                                                                                                 <td>edcvv</td>
                                                                                                 <td>7000</td>
                                                                                                 <td>23</td>
-                                                                                                <td style="display:none">2022-07-11</td>
+                                                                                                <td>2022-07-11</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td>Quanta</td>
                                                                                                 <td>efvvv</td>
                                                                                                 <td>8000</td>
                                                                                                 <td>13</td>
-                                                                                                <td style="display:none">2022-07-11</td>
+                                                                                                <td>2022-07-11</td>
                                                                                             </tr>
                                                                                         </tbody>
                                                                                     </table>
@@ -988,7 +988,7 @@
                                                                 <!-- row2-->
 
                                                               <!-- filter_button -->
-                                                                <div class="row mb-3 ml-2">
+                                                                <div class="row ml-1">
                                                                     <button id="NPI-filter-button4" class="btn btn-secondary btn-icon-split btn-sm">
                                                                         <span class="icon text-white-50">
                                                                             <i class="fas fa-arrow-right"></i>
@@ -999,9 +999,9 @@
                                                                  <!-- filter button -->
 
                                                                 <!-- filter -->
-                                                                <div class="row" style="display:none" id="NPI-filter4">
-                                                                    <div class="col-xl-12 col-lg-12 mb-4">
-                                                                        <div class="card shadow mb-3">
+                                                                <div class="row mt-2" style="display:none" id="NPI-filter4">
+                                                                    <div class="col-xl-12 col-lg-12">
+                                                                        <div class="card shadow">
                                                                             <div class="card-body">
 
                                                                                 <form action="" method="post">
@@ -1066,7 +1066,7 @@
                                                                         <div class="card shadow mb-4 h-100">
                                                                             <div class="card-body">
                                                                                 <div class="table-responsive">
-                                                                                    <table id="NPI-table5" class="display" style="width:100%">
+                                                                                    <table id="NPI-table5" class="display" style="width:100%; white-space:nowrap;">
                                                                                         <thead>
                                                                                             <tr>
                                                                                                 <th>ODM</th>
@@ -1074,7 +1074,7 @@
                                                                                                 <th>Series</th>
                                                                                                 <th>Issue QTY</th>
                                                                                                 <th>Repeating Issue Qty</th>
-                                                                                                <th style="display:none">Create Day</th>
+                                                                                                <th>Create Day</th>
                                                                                                 </tr>
                                                                                         </thead>
                                                                                         <tbody>
@@ -1084,7 +1084,7 @@
                                                                                                 <td>8000</td>
                                                                                                 <td>11</td>
                                                                                                 <td>1</td>
-                                                                                                <td style="display:none">2022-07-11</td>
+                                                                                                <td>2022-07-11</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td>Inventec</td>
@@ -1092,7 +1092,7 @@
                                                                                                 <td>8000</td>
                                                                                                 <td>31</td>
                                                                                                 <td>11</td>
-                                                                                                <td style="display:none">2021-08-11</td>
+                                                                                                <td>2021-08-11</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td>Compal</td>
@@ -1100,7 +1100,7 @@
                                                                                                 <td>7000</td>
                                                                                                 <td>12</td>
                                                                                                 <td>13</td>
-                                                                                                <td style="display:none">2022-07-11</td>
+                                                                                                <td>2022-07-11</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td>Inventec</td>
@@ -1108,7 +1108,7 @@
                                                                                                 <td>9000</td>
                                                                                                 <td>32</td>
                                                                                                 <td>14</td>
-                                                                                                <td style="display:none">2019-07-11</td>
+                                                                                                <td>2019-07-11</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td>Inventec</td>
@@ -1116,7 +1116,7 @@
                                                                                                 <td>8000</td>
                                                                                                 <td>22</td>
                                                                                                 <td>2</td>
-                                                                                                <td style="display:none">2022-07-11</td>
+                                                                                                <td>2022-07-11</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td>Compal</td>
@@ -1124,7 +1124,7 @@
                                                                                                 <td>7000</td>
                                                                                                 <td>53</td>
                                                                                                 <td>11</td>
-                                                                                                <td style="display:none">2022-06-11</td>
+                                                                                                <td>2022-06-11</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td>Quanta</td>
@@ -1132,7 +1132,7 @@
                                                                                                 <td>9000</td>
                                                                                                 <td>5</td>
                                                                                                 <td>6</td>
-                                                                                                <td style="display:none">2020-07-11</td>
+                                                                                                <td>2020-07-11</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td>Quanta</td>
@@ -1140,7 +1140,7 @@
                                                                                                 <td>7000</td>
                                                                                                 <td>23</td>
                                                                                                 <td>7</td>
-                                                                                                <td style="display:none">2022-07-11</td>
+                                                                                                <td>2022-07-11</td>
                                                                                             </tr>
                                                                                         </tbody>
                                                                                     </table>
@@ -1167,7 +1167,7 @@
                                                                 <!-- row2 -->
 
                                                                  <!-- filter_button -->
-                                                               <div class="row mb-3 ml-2">
+                                                               <div class="row ml-1">
                                                                     <button id="NPI-filter-button5" class="btn btn-secondary btn-icon-split btn-sm">
                                                                         <span class="icon text-white-50">
                                                                             <i class="fas fa-arrow-right"></i>
@@ -1178,9 +1178,9 @@
                                                                  <!-- filter button -->
 
                                                                 <!-- filter -->
-                                                                <div class="row" style="display:none" id="NPI-filter5">
-                                                                    <div class="col-xl-12 col-lg-12 mb-4">
-                                                                        <div class="card shadow mb-3">
+                                                                <div class="row mt-2" style="display:none" id="NPI-filter5">
+                                                                    <div class="col-xl-12 col-lg-12">
+                                                                        <div class="card shadow">
                                                                             <div class="card-body">
 
                                                                                 <form action="" method="post">
