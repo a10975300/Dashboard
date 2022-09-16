@@ -467,10 +467,13 @@ var ctx = document.getElementById("NPI-stackbar1");
 
     },
     options: {
-       maintainAspectRatio: false,
-        title: {
-            display: true,
-        },
+        maintainAspectRatio: false,
+      responsive: true,
+        plugins: {
+      labels: {
+         fontColor: 'transparent'
+      }
+    },
     tooltips: {
       mode: 'label',
       callbacks: {
@@ -480,7 +483,7 @@ var ctx = document.getElementById("NPI-stackbar1");
         }
       }
     },
-        responsive: true,
+
         scales: {
             xAxes: [{
                 stacked: true,
@@ -671,8 +674,13 @@ var ctx1 = document.getElementById("NPI-stacklinebar1");
 
     ]},
     options: {
-        responsive: true,
         maintainAspectRatio: false,
+      responsive: true,
+        plugins: {
+      labels: {
+         fontColor: 'transparent'
+      }
+    },
         tooltips: {
             mode: 'index',
             intersect: true
@@ -834,8 +842,13 @@ var ctx = document.getElementById("NPI-stacklinebar2");
 
     ]},
     options: {
-        responsive: true,
         maintainAspectRatio: false,
+      responsive: true,
+        plugins: {
+      labels: {
+         fontColor: 'transparent'
+      }
+    },
         tooltips: {
             mode: 'index',
             intersect: true
