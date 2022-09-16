@@ -4,8 +4,8 @@ $(document).ready(function () {
 
     $('#product-table1').DataTable({
         lengthMenu: [
-            [5, 10, 20, -1],
-            [5, 10, 20, 'All'],
+            [10, 20, -1],
+            [10, 20, 'All'],
         ],
     });
     producttable1_init();
@@ -13,7 +13,7 @@ $(document).ready(function () {
 
 var NPItable1 =  $('#NPI-table1').DataTable({
         searchPanes: {
-            layout: 'columns-3',
+            layout: 'columns-2',
             initCollapsed: true,
             cascadePanes: true
         },
@@ -24,12 +24,12 @@ var NPItable1 =  $('#NPI-table1').DataTable({
                     show: true
 
                 },
-                targets: [0,1,3]
+                targets: [0,1]
             }
         ],
                 lengthMenu: [
-            [5, 10, 20, -1],
-            [5, 10, 20, 'All'],
+            [10, 20, -1],
+            [10, 20, 'All'],
         ]
     });
     new $.fn.dataTable.SearchPanes(NPItable1, {});
@@ -53,8 +53,8 @@ var NPItable2 =  $('#NPI-table2').DataTable({
             }
         ],
                 lengthMenu: [
-            [5, 10, 20, -1],
-            [5, 10, 20, 'All'],
+            [10, 20, -1],
+            [10, 20, 'All'],
         ]
     });
     new $.fn.dataTable.SearchPanes(NPItable2, {});
@@ -65,15 +65,15 @@ var NPItable2 =  $('#NPI-table2').DataTable({
 
         $('#no').DataTable({
         lengthMenu: [
-            [5, 10, 20, -1],
-            [5, 10, 20, 'All'],
+            [10, 20, -1],
+            [10, 20, 'All'],
         ],
     });
 
 
     var NPItable3 =  $('#NPI-table3').DataTable({
         searchPanes: {
-            layout: 'columns-6',
+            layout: 'columns-5',
             initCollapsed: true,
             cascadePanes: true
         },
@@ -83,18 +83,18 @@ var NPItable2 =  $('#NPI-table2').DataTable({
                 searchPanes: {
                     show: true
                 },
-                targets: [0,1,2,3,4,6]
+                targets: [0,1,2,3,4]
             },
             {
                 searchPanes: {
                     show: false
                 },
-                targets: [5]
+                targets: [5,6]
             }
         ],
                 lengthMenu: [
-            [5, 10, 20, -1],
-            [5, 10, 20, 'All'],
+            [10, 20, -1],
+            [10, 20, 'All'],
         ]
     });
     new $.fn.dataTable.SearchPanes(NPItable3, {});
@@ -105,7 +105,7 @@ var NPItable2 =  $('#NPI-table2').DataTable({
 
 var NPItable4 =  $('#NPI-table4').DataTable({
         searchPanes: {
-            layout: 'columns-4',
+            layout: 'columns-3',
             initCollapsed: true,
             cascadePanes: true
         },
@@ -115,18 +115,18 @@ var NPItable4 =  $('#NPI-table4').DataTable({
                 searchPanes: {
                     show: true
                 },
-                targets: [0,1,2,4]
+                targets: [0,1,2]
             },
             {
                 searchPanes: {
                     show: false
                 },
-                targets: [3]
+                targets: [3,4]
             }
         ],
                 lengthMenu: [
-            [5, 10, 20, -1],
-            [5, 10, 20, 'All'],
+            [10, 20, -1],
+            [10, 20, 'All'],
         ]
     });
     new $.fn.dataTable.SearchPanes(NPItable4, {});
@@ -137,7 +137,7 @@ var NPItable4 =  $('#NPI-table4').DataTable({
 
 var NPItable5 =  $('#NPI-table5').DataTable({
         searchPanes: {
-            layout: 'columns-4',
+            layout: 'columns-3',
             initCollapsed: true,
             cascadePanes: true
         },
@@ -147,18 +147,18 @@ var NPItable5 =  $('#NPI-table5').DataTable({
                 searchPanes: {
                     show: true
                 },
-                targets: [0,1,2,5]
+                targets: [0,1,2]
             },
             {
                 searchPanes: {
                     show: false
                 },
-                targets: [3,4]
+                targets: [3,4,5]
             }
         ],
                 lengthMenu: [
-            [5, 10, 20, -1],
-            [5, 10, 20, 'All'],
+            [10, 20, -1],
+            [10, 20, 'All'],
         ]
     });
     new $.fn.dataTable.SearchPanes(NPItable5, {});
@@ -283,7 +283,7 @@ function producttable1_init(){
     }
   }
 
-    table_init.page.len(5).draw();
+    table_init.page.len(10).draw();
 
 
 //product-pie1
@@ -403,7 +403,7 @@ data.S[data.col0.indexOf(coltext0)] = coltext2_S_old+ Number(coltext2)
 
 }
 
-    table_init.page.len(5).draw();
+    table_init.page.len(10).draw();
 
         if(NPI_pie1_build===1){ 
             NPI_pie1.destroy();
@@ -532,7 +532,7 @@ data.col5[data.col4.indexOf(coltext4)] = coltext5_old+ Number(coltext5)
 
 }
 
-    table_init.page.len(5).draw();
+    table_init.page.len(10).draw();
 
     if(NPI_pie3_build===1){ 
     NPI_pie3.destroy();
@@ -565,7 +565,7 @@ var ctxP = canvasP.getContext('2d')
 }
 
 
-
+//合併
 function NPItable4_init(){
 
     var table_init = $('#NPI-table4').DataTable();
@@ -573,25 +573,25 @@ function NPItable4_init(){
 
     var table = document.getElementById("NPI-table4");
     var tableLen = table.rows.length;
-    var data = {col0: [], col1: [], col3: [],col11: [], col33: [] };
+    var data = {col0: [], col1: [], col3: [],col2: [], col33: [] };
 
 for (var i = 1; i < tableLen; i++) {
 
     var coltext0 = table.rows[i].cells[0].innerText;
-    var coltext1 = table.rows[i].cells[1].innerText;
+    var coltext2 = table.rows[i].cells[2].innerText;
     var coltext3 = Number(table.rows[i].cells[3].innerText);
 
 
 //pie
-  if (data.col11.indexOf(coltext1) === -1) {
-  data.col11.push(coltext1);
+  if (data.col2.indexOf(coltext2) === -1) {
+  data.col2.push(coltext2);
   data.col33.push(coltext3);
 }
 else{
 
 
-var coltext3_old = Number(data.col33[data.col11.indexOf(coltext1)])
-data.col3[data.col11.indexOf(coltext0)] = coltext3_old+ Number(coltext3)
+var coltext33_old = Number(data.col33[data.col2.indexOf(coltext2)])
+data.col33[data.col2.indexOf(coltext2)] = coltext33_old+ Number(coltext3)
 
 }
 
@@ -615,7 +615,7 @@ data.col3[data.col0.indexOf(coltext0)] = coltext3_old+ Number(coltext3)
 
 }
 
-    table_init.page.len(5).draw();
+    table_init.page.len(10).draw();
 
 
         if(NPI_pie4_build===1){ 
@@ -629,7 +629,7 @@ var ctxP = canvasP.getContext('2d')
  NPI_pie4 = new Chart(ctxP, {
   type: 'pie',
   data: {
-    labels: data.col11,
+    labels: data.col2,
     datasets: [{
       data: data.col33
     }]
@@ -727,25 +727,24 @@ function NPItable5_init(){
 
     var table = document.getElementById("NPI-table5");
     var tableLen = table.rows.length;
-    var data = {col0: [], col1: [], col3: [], col4: [],col11: [], col44: [] };
+    var data = {col0: [], col1: [], col3: [], col4: [],col2: [], col44: [] };
 
 for (var i = 1; i < tableLen; i++) {
 
     var coltext0 = table.rows[i].cells[0].innerText;
-    var coltext1 = table.rows[i].cells[1].innerText;
+    var coltext2 = table.rows[i].cells[2].innerText;
     var coltext3 = Number(table.rows[i].cells[3].innerText);
     var coltext4 = Number(table.rows[i].cells[4].innerText);
 
 //pie
-  if (data.col11.indexOf(coltext1) === -1) {
-  data.col11.push(coltext1);
+  if (data.col2.indexOf(coltext2) === -1) {
+  data.col2.push(coltext2);
   data.col44.push(coltext4);
 }
 else{
 
-
-var coltext4_old = Number(data.col4[data.col11.indexOf(coltext1)])
-data.col4[data.col11.indexOf(coltext0)] = coltext4_old+ Number(coltext4)
+var coltext44_old = Number(data.col44[data.col2.indexOf(coltext2)])
+data.col44[data.col2.indexOf(coltext2)] = coltext44_old+ Number(coltext4)
 
 }
 
@@ -772,7 +771,7 @@ data.col4[data.col0.indexOf(coltext0)] = coltext4_old+ Number(coltext4)
 
 }
 
-    table_init.page.len(5).draw();
+    table_init.page.len(10).draw();
 
 
         if(NPI_pie5_build===1){ 
@@ -786,7 +785,7 @@ var ctxP = canvasP.getContext('2d')
  NPI_pie5 = new Chart(ctxP, {
   type: 'pie',
   data: {
-    labels: data.col11,
+    labels: data.col2,
     datasets: [{
       data: data.col44
     }]
