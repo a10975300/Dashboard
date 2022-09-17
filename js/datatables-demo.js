@@ -651,70 +651,65 @@ var ctxP = canvasP.getContext('2d')
     }
 
 
-    //NPI-stacklinebar1
-    NPI_stacklinebar1_build=1
-var ctx1 = document.getElementById("NPI-stacklinebar1");
- NPI_stacklinebar1 = new Chart(ctx1, {
-    type: 'bar',
-   data: {
-      labels: data.col0,
-    datasets: [
-          {
-        label: 'Issue Qty',
-        yAxisID: "y-axis-2",
-        data: data.col3,
-        type: 'line',
-        fill: false
-      },
-      {
-        label: 'Product name',
-        yAxisID: "y-axis-1",
-        data: data.col1
-      },
+//NPI-barline1
+NPI_stacklinebar1_build=1
+var ctx = document.getElementById("NPI-stacklinebar1");
+ NPI_stacklinebar1 = new Chart(ctx, {
+  type: 'bar',
+  data: {
+            labels:data.col0,
+            datasets: [
 
-    ]},
-    options: {
-        maintainAspectRatio: false,
-      responsive: true,
+                {
+                    type: 'line',
+                    label: 'Issue Qty',
+                    fill: false,
+                    data: data.col3,
+                },
+
+                  {
+                    type: 'bar',
+                    label: 'Product name',
+                    data: data.col1,
+                    yAxisID: "bar-y-axis"
+                }
+            ]
+        },
+  options: {
+    datasetFill: false,
+    scaleShowVerticalLines: false,
+    maintainAspectRatio: false,
+    responsive: true,
         plugins: {
       labels: {
          fontColor: 'transparent'
       }
     },
-        tooltips: {
-            mode: 'index',
-            intersect: true
-        },
-        scales: {
-            xAxes: [{
-                stacked: true
-            }],
-            yAxes: [{
-                type: "linear",
-                stacked: true,
-                display: true,
-                position: "left",
-                id: "y-axis-1",
-                ticks: {
-                    beginAtZero: true,
-                    suggestedMin: 0,
-                    suggestedMax: 10,
-                    min: 0
-                }
-            }, {
-                type: "linear",
-                display: false,
-                id: "y-axis-2",
-                ticks: {
-                    beginAtZero: true,
-                    suggestedMin: 0,
-                    suggestedMax: 10,
-                    min: 0
-                }
-            }],
+    scales: {
+      xAxes: [{
+        stacked: true,
+        ticks: {
+          beginAtZero: true
         }
+      }],
+      yAxes: [{
+        stacked: false,
+        position: "right",
+        ticks: {
+          beginAtZero: true
+        }
+      }, {
+        id: "bar-y-axis",
+        stacked: true,
+        ticks: {
+          beginAtZero: true
+        },
+        type: 'linear'
+      }]
     }
+  }
 });
+
 
 }
 
@@ -810,80 +805,70 @@ var ctxP = canvasP.getContext('2d')
     }
 
 
+
 //NPI-barline2
 NPI_stacklinebar2_build=1
 var ctx = document.getElementById("NPI-stacklinebar2");
  NPI_stacklinebar2 = new Chart(ctx, {
-    type: 'bar',
-   data: {
-      labels: data.col0,
-    datasets: [
+  type: 'bar',
+  data: {
+            labels:data.col0,
+            datasets: [
 
-          {
-        label: 'Issue Qty',
-        yAxisID: "y-axis-2",
-        data: data.col3,
-        type: 'line',
-        fill: false
-      },
-            {
-        label: 'REIssue Qty',
-        yAxisID: "y-axis-2",
-        data: data.col4,
-        type: 'line',
-        fill: false
-      },
-      {
-        label: 'Product name',
-        yAxisID: "y-axis-1",
-        data: data.col1
-      },
-
-    ]},
-    options: {
-        maintainAspectRatio: false,
-      responsive: true,
+                {
+                    type: 'line',
+                    label: 'Issue Qty',
+                    fill: false,
+                    data: data.col3,
+                },
+                {
+                    type: 'line',
+                    label: 'EIssue Qty',
+                    fill: false,
+                    data: data.col4,
+                },
+                  {
+                    type: 'bar',
+                    label: 'Product name',
+                    data: data.col1,
+                    yAxisID: "bar-y-axis"
+                }
+            ]
+        },
+  options: {
+    datasetFill: false,
+    scaleShowVerticalLines: false,
+    maintainAspectRatio: false,
+    responsive: true,
         plugins: {
       labels: {
          fontColor: 'transparent'
       }
     },
-        tooltips: {
-            mode: 'index',
-            intersect: true
-        },
-        scales: {
-            xAxes: [{
-                stacked: true
-            }],
-            yAxes: [{
-                type: "linear",
-                stacked: true,
-                display: true,
-                position: "left",
-                id: "y-axis-1",
-                ticks: {
-                    beginAtZero: true,
-                    suggestedMin: 0,
-                    suggestedMax: 10,
-                    min: 0
-                }
-            }, {
-                type: "linear",
-                display: false,
-                id: "y-axis-2",
-                ticks: {
-                    beginAtZero: true,
-                    suggestedMin: 0,
-                    suggestedMax: 10,
-                    min: 0
-                }
-            }],
+    scales: {
+      xAxes: [{
+        stacked: true,
+        ticks: {
+          beginAtZero: true
         }
+      }],
+      yAxes: [{
+        stacked: false,
+        position: "right",
+        ticks: {
+          beginAtZero: true
+        }
+      }, {
+        id: "bar-y-axis",
+        stacked: true,
+        ticks: {
+          beginAtZero: true
+        },
+        type: 'linear'
+      }]
     }
+  }
 });
-
-
 
 }
 
