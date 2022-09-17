@@ -301,6 +301,12 @@ var ctx = document.getElementById( "product-pie1" );
   options: {
         maintainAspectRatio: false,
       responsive: true,
+        legend: {
+          labels: {
+            fontColor: "black",
+            fontSize: 10
+                }
+        },      
         plugins: {
       labels: {
          fontColor: '#fff'
@@ -467,8 +473,14 @@ var ctx = document.getElementById("NPI-stackbar1");
 
     },
     options: {
-        maintainAspectRatio: false,
+      maintainAspectRatio: false,
       responsive: true,
+        legend: {
+          labels: {
+            fontColor: "black",
+            fontSize: 10
+                }
+        },      
         plugins: {
       labels: {
          fontColor: 'transparent'
@@ -553,6 +565,12 @@ var ctxP = canvasP.getContext('2d')
   options: {
         maintainAspectRatio: false,
       responsive: true,
+        legend: {
+          labels: {
+            fontColor: "black",
+            fontSize: 10
+                }
+        },      
         plugins: {
       labels: {
          fontColor: '#fff'
@@ -637,6 +655,12 @@ var ctxP = canvasP.getContext('2d')
   options: {
         maintainAspectRatio: false,
       responsive: true,
+        legend: {
+          labels: {
+            fontColor: "black",
+            fontSize: 10
+                }
+        },      
         plugins: {
       labels: {
          fontColor: '#fff'
@@ -680,6 +704,12 @@ var ctx = document.getElementById("NPI-stacklinebar1");
     scaleShowVerticalLines: false,
     maintainAspectRatio: false,
     responsive: true,
+        legend: {
+          labels: {
+            fontColor: "black",
+            fontSize: 10
+                }
+        },    
         plugins: {
       labels: {
          fontColor: 'transparent'
@@ -786,8 +816,14 @@ var ctxP = canvasP.getContext('2d')
     }]
   },
   options: {
-        maintainAspectRatio: false,
+      maintainAspectRatio: false,
       responsive: true,
+        legend: {
+          labels: {
+            fontColor: "black",
+            fontSize: 10
+                }
+        },      
         plugins: {
       labels: {
          fontColor: '#fff'
@@ -803,6 +839,7 @@ var ctxP = canvasP.getContext('2d')
     if(NPI_stacklinebar2_build === 1){ //如果有建立過了
     NPI_stacklinebar2.destroy();
     }
+
 
 
 
@@ -840,6 +877,12 @@ var ctx = document.getElementById("NPI-stacklinebar2");
     scaleShowVerticalLines: false,
     maintainAspectRatio: false,
     responsive: true,
+        legend: {
+          labels: {
+            fontColor: "black",
+            fontSize: 10
+                }
+        },    
         plugins: {
       labels: {
          fontColor: 'transparent'
@@ -871,8 +914,4 @@ var ctx = document.getElementById("NPI-stacklinebar2");
 });
 
 }
-
-
-
-
 
