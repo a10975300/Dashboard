@@ -401,7 +401,7 @@ data.FP[data.col0.indexOf(coltext0)] = coltext2_FP_old+ Number(coltext2)
 }
 
   else if (data.col0.indexOf(coltext0) !== -1 && coltext1=== "Supplier") {
-var coltext2_S_old = Number(data.FP[data.col0.indexOf(coltext0)])
+var coltext2_S_old = Number(data.S[data.col0.indexOf(coltext0)])
 data.S[data.col0.indexOf(coltext0)] = coltext2_S_old+ Number(coltext2)
 
 }
